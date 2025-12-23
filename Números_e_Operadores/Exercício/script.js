@@ -13,7 +13,7 @@ console.log(soma  + 1, idade - 1)
 
 // Somar a string '200' com o número 50 e retorna 250
 
-var soma = +'200' + 50
+var soma = '200' + 50
 
 console.log(soma)
 

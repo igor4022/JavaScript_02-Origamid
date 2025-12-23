@@ -159,8 +159,8 @@ if (idade != 18) {
 if (idade == 16) {
 
     console.log('De verdade você deveria comesar a achar emprego')
+    
 } else {
-
     console.log('Então vai achar emprego né?')
 }
 
@@ -177,5 +177,59 @@ if (idade === 16) {
     console.log('De verdade você deveria comesar a achar emprego')
 } else {
 
-    console.log('Então vai achar emprego né?')
+}
+console.log('Então vai achar emprego né?')
+
+// Exemplo 8:
+
+// Agora vamos falar dos últimos operadores '&&' e '||'... 
+
+// O símbulo '&&' pode ser usado para indicar que você quer mais de uma coisa em sua função...
+
+// Sé 5 == 5 e 5 <= 5, recebe 'true' 
+// Mas sé um deles estiver errado, recebe 'false'
+
+if (5 == 5 && 5 <= 5) {
+
+    console.log('Oi de boa')
+  } 
+
+// O símbulo '||' pode ser usado para dizer se você quer um ou outro
+
+// Sé idade == 16 ou idade <= 18, recebe 'true' ...
+// Sé a primeira estiver correta ele recebe 'true'...
+// se a primeira não estiver correta ele passa para a outra e se estiver correta recebe 'true'...
+// Mas se nem uma estiver correta ela recebe 'false'....
+
+var idade = 16
+
+if (idade == 16 || idade <= 18) {
+
+    console.log('Íai...então...Como vai a procura de um trabalo')
+}
+
+// Exemplo 9:
+
+// Com o 'switch' você pode verificar se uma variável é igual à diferentes valores utilizando o 'case' e finalizando com 'break'...
+
+// E pode se usar o 'default' para indicar caso seja nenhumas opições escritas (ele funciona como se fosse um 'else')...
+
+var corFavorita = 'Vermelha'
+
+switch (corFavorita) {
+
+    case 'Vermelha':
+        console.log('Olhe para sua guitarra')
+        break
+
+    case 'Azul':
+        console.log('Olhe para o céu')
+        break
+
+    case 'Amarelo':
+        console.log('Olhe para o sol')
+        break
+    
+    default:
+        console.log('Não sei o que te dizer amigo')
 }

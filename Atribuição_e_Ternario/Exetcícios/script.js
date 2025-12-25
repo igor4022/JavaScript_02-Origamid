@@ -2,9 +2,13 @@
 // atribuindo o novo valor a scroll
 var scroll = 1000;
 
+scroll += 500
+
 // Atribua true para a variável darCredito,
 // caso o cliente possua carro e casa.
 // E false caso o contrário.
 var possuiCarro = true;
 var possuiCasa = true;
-var darCredito;
+var darCredito = true;
+
+darCredito = (possuiCarro && possuiCasa) ? 'Parabenz!': 'É complicado...'

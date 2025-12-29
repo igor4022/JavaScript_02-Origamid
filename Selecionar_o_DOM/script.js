@@ -51,7 +51,22 @@ console.log(animaisImg)
 const gridSectionHTML = document.getElementsByClassName('grid-section')
 const gridSectionNode = document.querySelectorAll('.grid-section')
 
-primeiraUl
+primeiraUl.classList.add('grid-section')
 
-console.log(gridSectionHTML)
-console.log(gridSectionNode)
+console.log(gridSectionHTML[0])
+console.log(gridSectionNode[0])
+
+// Exemplo 6
+
+// Array-Like...HTMLCollection e NodeList são array-like, parecem uma array mas não são. O método de Array 'forEach()' por exemplo, existe apenas em Nodelist...
+
+gridSectionNode.forEach(function(item, index) {
+    console.log(index)
+})
+
+const arryaGrid = Array.from(gridSectionHTML)
+
+arryaGrid.forEach(function(item) {
+
+    console.log(item)
+})

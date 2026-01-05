@@ -110,12 +110,12 @@ function clicar(event) {
     console.log(event.type, event)
 }
 
-/*1.addEventListener('click', clicar)
+h1.addEventListener('click', clicar)
 h1.addEventListener('mouseenter', clicar)
 h1.addEventListener('mousemove', clicar)
 window.addEventListener('scroll', clicar)
 window.addEventListener('resize', clicar)
-//window.addEventListener('keydown', clicar)*/
+window.addEventListener('keydown', clicar)
 
 // Exemplo 8:
 
@@ -130,3 +130,21 @@ function botao(event) {
 }
 
 window.addEventListener('keydown', botao)
+
+// Exemplo 9:
+
+// forEach e Eventos...
+
+// O método 'addEventListener' é adicionado à um único elemento, então é necessário um loop entre elementos de uma lista, para adicionarmos à cada um deles...
+
+const imgs = document.querySelectorAll('img')
+
+function handleImg(event) {
+
+    console.log(event.target)
+}
+
+imgs.forEach((img) => {
+
+    console.log(img)
+})

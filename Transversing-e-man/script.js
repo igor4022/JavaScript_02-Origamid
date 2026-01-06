@@ -41,5 +41,38 @@ console.log(lista.previousSibling)
 
 // Manipulando Elementos...É possível mover elementos no dom com métodos de Node...
 
+const anima = document.querySelector('.animais')
 const contato = document.querySelector('.contato')
-const titulo = document.querySelector('titulo')
+const titulo = contato.querySelector('.titulo')
+const mapa = document.querySelector('.mapa')
+
+lista.appendChild(titulo)
+animais.appendChild(titulo)
+contato.insertBefore(animais, mapa)
+contato.removeChild(mapa)
+// contato.replaceChild(lista)
+
+// Exemplo 5:
+
+// Novos Elementos...Podemos criar novos elementos com o método 'createElement()'
+
+const novoH1 = document.createElement('h1')
+
+novoH1.innerHTML = 'Novo Título'
+novoH1.classList.add('titulo')
+
+titulo.appendChild(novoH1)
+
+console.log(novoH1)
+
+// Exemplo 6:
+
+// Clonar elementos...Todo elemento selecionado é único. Para criarmos um novo elemento baseado no anterior, é necessário utilizar o método 'cloneNode()'
+
+const valH1 = document.querySelector('h1')
+const faq = document.querySelector('.faq')
+const cloneH1 = h1.cloneNode(true)
+
+cloneH1.classList.add('vermelho')
+
+faq.appendChild(cloneH1)

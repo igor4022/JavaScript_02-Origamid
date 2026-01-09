@@ -1,16 +1,42 @@
-const tabMenu = document.querySelectorAll('.js-tabmenu li')
-const tabContent = document.querySelectorAll('.js-tabcontent section')
+// O que muda o texto dependendo do que você clicar...
 
-function activeTab(index) {
-  tabContent.forEach((content) => {
-    content.classList.remove('ativo')
+function initTabMav() {
+
+  const tabMenu = document.querySelectorAll('.js-tabmenu li')
+  const tabContent = document.querySelectorAll('.js-tabcontent section')
+
+  function activeTab(index) {
+    tabContent.forEach((content) => {
+      content.classList.remove('ativo')
+    })
+    tabContent[index].classList.add('ativo')
+  }
+
+  tabMenu.forEach((itemMenu, index) => {
+
+    itemMenu.addEventListener('click', () => {
+      activeTab(index)
+    })
   })
-  tabContent[index].classList.add('ativo')
 }
 
-tabMenu.forEach((itemMenu, index) => {
+initTabMav()
 
-  itemMenu.addEventListener('click', () => {
-    activeTab(index)
+function initAcordion() {
+
+  const accordionList = document.querySelectorAll('.js-accordion dt')
+  const classAtivo = 'ativo'
+
+  function activeAcordion(event) {
+
+    this.classList.toggle((classAtivo))
+    this.nextElementSibling.classList.toggle(classAtivo)
+  }
+
+  accordionList.forEach((item) => {
+
+    item.addEventListener('click', activeAcordion)
   })
-})
+}
+
+initAcordion()

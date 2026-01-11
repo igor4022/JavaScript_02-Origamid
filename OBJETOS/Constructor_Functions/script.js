@@ -46,5 +46,20 @@ function Carro2(marcaAtribuida, presoAtribuido) {
     this.preso = presoAtribuido
 }
 
-const honda3= new Carro2('Honda', 2000)
+const honda3 = new Carro2('Honda', 2000)
 const fiat3 = new Carro2('Fiat', 3000)
+
+// Exemplo 4:
+
+// O 'this' faz referência ao próprio objeto construído com a Constructor Function.
+
+function Carro3(marcas, presoInicial) {
+
+    const taxa = 1.2
+    const presoFinal = presoInicial * taxa
+    this.marca = marcas
+    this.preso = presoFinal
+
+}
+
+const mazda = new Carro3('Mazda', 5000)

@@ -7,7 +7,7 @@ function Pessoa(nome, idade) {
     this.idade = idade
 }
 
-const andere = new Pessoa('Andre ', 28)
+const andre = new Pessoa('Andre ', 28)
 
 console.log(Pessoa.prototype)
 

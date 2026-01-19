@@ -70,3 +70,37 @@ const Carro = {
         return true
     }
 }
+
+// Exemplo 7:
+
+// É a construtora de strings, toda string possui as propriedades e métodos do prototype de String...
+
+const comida = 'Pizza'
+const agua = new String('Agua')
+
+// Exemplo 8:
+
+// str.length...Propriedade como o total de caracteres da string...
+
+console.log(comida.length)
+
+comida[0]
+
+const frase = 'Amelhor comida'
+
+console.log(frase[frase.length])
+
+// Exemplo 9:
+
+// str.charAth(n)...Retorna o caracter de acordo com index ne (n)
+
+console.log(frase.charAt(frase.length))
+
+// Exemplo 10:
+
+// str.concat(str2, str3, ...)...Concatenas as strings e retorna o resultado...
+
+const frases = 'A melhor linguagem é'
+const linguagem = 'JavaScript'
+
+const fraseFinal = frase.concat(linguagem)

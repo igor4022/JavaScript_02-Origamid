@@ -56,8 +56,14 @@ console.log(frase.slice(12,-1))
 // Retorne o total de taxas
 const transacoes2 = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
 
-transacoes2.forEach((item) => {
-  let taxa = 0
-  console.log(item.startsWith('taxa'))
+let taxas = 0
 
+transacoes2.forEach((item) => {
+  item = item.toLowerCase().trim().slice(0,4)
+
+  if(item === 'taxa') {
+    taxas++
+  }
 })
+
+console.log(taxas)

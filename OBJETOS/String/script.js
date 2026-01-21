@@ -1,97 +1,107 @@
 // Exemplo 1:
 
-// Prtotype...A proriedade prototype é um objeto adicionado a uma função quando a mesma é criada...
+// str.concat(str2, str3, ...)...Concatenas as strings e retorna o resultado...
 
-function Pessoa(nome, idade) {
-    this.nome = nome
-    this.idade = idade
-}
+const frases = 'A melhor linguagem é '
+const linguagem = 'JavaScript'
 
-const andre = new Pessoa('Andre ', 28)
-
-console.log(Pessoa.prototype)
+const fraseFinal = frases.concat(linguagem)
 
 // Exemplo 2:
 
-// É possível adicionar novas propriedades e métodos ao objeto prototype...
+// str.includes(search, position)...Procura pela string exata dentro de outra string. Aprocura é case sensitiva...
 
-Pessoa.prototype.andar = function() {
+const banana = 'Banana'
+const listaFrutas = 'Uva, Banana, Tangerina'
 
-    return this.nome + 'Pessoa andou'
-}
-
-Pessoa.prototype.nadar = function() {
-
-    return this.nome + 'Pessoa nadou'
-}
-
-// Acesso ao Protótipo...O objeto criado utilizando o construtor. Lembrando, prototype é uma propriedade e funções apenas...
+console.log(listaFrutas.includes(banana))
 
 // Exemplo 3:
 
-// Construtores Nativos...Objetos, Funções, Números, Strings e outros tipos de dados são criados utilizando construtores...
+// str.endsWith(search) e str.starstsWith(search)...Procura pela string exata dentro de outra string. A procura é case sensitiva...
 
-// Esses construtores possuem um protótipo com propriedades e métodos, que poderão ser acessadas pelo tipo de dado...
+console.log(banana.startsWith('Bana'))
+console.log(banana.endsWith('na'))
 
-const pais = 'Brasil'
-const cidade = new String('Rio')
+// Eexmplo 4:
 
-// Exemplo 4:
+// str.slice(start, end)...Corta a string de acordo com os valores de start e end...
 
-// É possível acessar a função do protótipo...
+const nome = 'Igor'
+const lingua = 'JavaScript'
 
-// É comum, principalmente em códigos mais antigos, o uso direto de funções do protótipo do construtor Array...
-
-const listaAnimais = ['Cachorro', 'Gato', 'Coruja']
-
-const lista = document.querySelectorAll('li')
-
-const listaArray = Array.prototype.slice.call(lista)
+console.log(nome.slice(0,3))
+console.log(lingua.slice(0,-3))
 
 // Exemplo 5:
 
-// Métodos do Objeto vs Protótipo...
+// str.substring(start, end)...Corta a string de acorda com os valores de start e end. Não funcionar com valores negativos como o slice...
 
-// Nos objetos nativos existem métodos linkados diretamente ao Objeto e outros linkados ao protótipo...
+const feramenta = 'TypeScript' 
 
-const listaArray1 = Array.prototype.slice.call(lista)
-const listaArray2 = Array.from(lista)
+console.log(feramenta.substring(0,7))
+console.log(feramenta.substring(1,-3))
 
 // Exemplo 6:
 
-// Entenda o Que está Sendo Retornado.....
+// str.indexOf(search) e str.lastIndexOf(search)...Reotorna o index da string, assim que achar o primeiro resultado ele já retorna. No caso do lastIndexOf ele retorna o último resultado...
 
-// Os métodos e propriedades acessado com o '.' são referentes ao tipo de dados que é retornado antes desse '.'...
-
-const Carro = {
-    marca: 'Ford',
-    preco: 2000,
-    andar() {
-        return true
-    }
-}
+console.log(banana.indexOf('B'))
+console.log(banana.lastIndexOf('a'))
 
 // Exemplo 7:
 
-// É a construtora de strings, toda string possui as propriedades e métodos do prototype de String...
+// str.padStart(n,str) e str.padEnd(n,str)...
+// Aumenta o tamanho da string para o valor n. Ou seja, uma string com 8 caracteres, se passarmos n = 10, ela passará a ter 10 caracteres. O preenchimento é feito com espaços, caso não seja declarado o segundo argumento...
 
-const comida = 'Pizza'
-const agua = new String('Agua')
+const valor = 'R$ 100,00'
+
+console.log(valor.padStart(20, '.'))
+console.log(valor.padEnd(20, '.'))
 
 // Exemplo 8:
 
-// str.length...Propriedade como o total de caracteres da string...
+//str.pepeath(n)...Repete a string(n) vezes...
 
-console.log(comida.length)
+const fala = 'Tá'
 
-comida[0]
-
-const frase = 'Amelhor comida'
-
-console.log(frase[frase.length])
+console.log(fala.repeat(5))
 
 // Exemplo 9:
 
-// str.charAth(n)...Retorna o caracter de acordo com index ne (n)
+// str.replace(regexp/substr, newstr/function)...
+// Troca parte da string por outra. Podemos utilizar uma regular expression ou um valor direito. Se usarmos um valor direito ele irá trocar apenas o primeiro valor que encontrar...
 
-console.log(frase.charAt(frase.length))
+let listaItens = 'Camisa Bonés Calças Bermudas Vestidos Saídas'
+listaItens = listaItens.replace(/[' ']+/g, ', ')
+
+console.log(listaItens)
+
+// Exemplo 10:
+
+// str.split(padrao)...Divide a string de acordo com o padrão passado e retorna uma arrat...
+
+const arrayLista = listaItens.split('')
+
+console.log(arrayLista)
+
+// Exemplo 11:
+
+// str.toLowerCase() e str.toUpperCase()...Retorna a string em letras maiúsculas ou minúsculas. Bom para verificarmos input de usuários...
+
+const sexo1 = 'Feminino'
+const sexo2 = 'feminino'
+const sexo3 = 'FEMININO'
+
+console.log(sexo1.toLowerCase() === 'feminino')
+console.log(sexo1.toUpperCase() === 'FEMININO')
+
+// Exemplo 11:
+
+// str.trim(), str.trimStart(), str.trimEnd()...Remove espaço em branco do inicício au final de uma string...
+
+const numero = ' R$ 25.00 '
+
+console.log(valor.trim()) // 'R$ 25.00'
+console.log(valor.trimStart()) // 'R$ 25.00 '
+console.log(valor.trimEnd()) // ' R$ 25.00'

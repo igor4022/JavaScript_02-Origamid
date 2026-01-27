@@ -111,7 +111,7 @@ const corsa = {
     cinto: true
 }
 
-Object.defineProperties(moto, {
+Object.defineProperties(corsa, {
     rodas: {
         get() {
             this._rodas

@@ -1,50 +1,312 @@
-const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão'];
-// Remova o primeiro valor de comidas e coloque em uma variável
-// Remova o último valor de comidas e coloque em uma variável
-// Adicione 'Arroz' ao final da array
-// Adicione 'Peixe' e 'Batata' ao início da array
-comidas.shift()
-comidas.pop()
+// Crie uma função que verifique
+// corretamente o tipo de dado
 
-const comidasMais = ['Peixe', 'Batata']
-const comida = ['Arroz']
+const banana = 'Banana'
 
-resul = comidasMais.concat(comidas, comida)
+console.log(banana.toString())
 
-console.log(resul)
+// Crie um objeto quadrado com
+// a propriedade lados e torne
+// ela imutável
 
-const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
-// Arrume os estudantes em ordem alfabética
-// Inverta a ordem dos estudantes
-// Verifique se Joana faz parte dos estudantes
-// Verifique se Juliana faz parte dos estudantes
+const quadrado = {
+  nome: 'Quadrado',
+  lados: 4
+}
 
-estudantes.sort()
-estudantes.reverse()
+Object.freeze(quadrado)
 
-console.log(estudantes.includes('Joana'))
-console.log(estudantes.includes('Juliana'))
+quadrado.lados =  10
 
-let html = `<section>
-              <div>Sobre</div>
-              <div>Produtos</div>
-              <div>Contato</div>
-            </section>`
-// Substitua section por ul e div com li,
-// utilizando split e join
+console.log(quadrado)
 
-html = html.split('section', 'div')
-html = html.join('ul', 'li')
+// Previna qualquer mudança
+// no objeto abaixo
+const configuracao = {
+  width: 800,
+  height: 600,
+  background: '#333'
+}
 
-console.log(html)
+Object.freeze(configuracao)
 
+configuracao.height = 7000
 
-const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
-// Remova o último carro, mas antes de remover
-// salve a array original em outra variável
+configuracao['item'] = 1
 
-carrosCopia = carros.slice()
-carros.pop()
+console.log(configuracao)
 
-console.log(carros)
-console.log(carrosCopia)
+// Liste o nome de todas
+// as propriedades do
+// protótipo de String e Array
+
+console.log(Object.getOwnPropertyNames(String.prototype))
+console.log(Object.getOwnPropertyNames(Array.prototype))
+
+// String:
+
+/*
+  at
+  : 
+  ƒ at()
+  concat
+  : 
+  ƒ concat()
+  constructor
+  : 
+  ƒ Array()
+  copyWithin
+  : 
+  ƒ copyWithin()
+  entries
+  : 
+  ƒ entries()
+  every
+  : 
+  ƒ every()
+  fill
+  : 
+  ƒ fill()
+  filter
+  : 
+  ƒ filter()
+  find
+  : 
+  ƒ find()
+  findIndex
+  : 
+  ƒ findIndex()
+  findLast
+  : 
+  ƒ findLast()
+  findLastIndex
+  : 
+  ƒ findLastIndex()
+  flat
+  : 
+  ƒ flat()
+  flatMap
+  : 
+  ƒ flatMap()
+  forEach
+  : 
+  ƒ forEach()
+  includes
+  : 
+  ƒ includes()
+  indexOf
+  : 
+  ƒ indexOf()
+  join
+  : 
+  ƒ join()
+  keys
+  : 
+  ƒ keys()
+  lastIndexOf
+  : 
+  ƒ lastIndexOf()
+  length
+  : 
+  0
+  map
+  : 
+  ƒ map()
+  pop
+  : 
+  ƒ pop()
+  push
+  : 
+  ƒ push()
+  reduce
+  : 
+  ƒ reduce()
+  reduceRight
+  : 
+  ƒ reduceRight()
+  reverse
+  : 
+  ƒ reverse()
+  shift
+  : 
+  ƒ shift()
+  slice
+  : 
+  ƒ slice()
+  some
+  : 
+  ƒ some()
+  sort
+  : 
+  ƒ sort()
+  splice
+  : 
+  ƒ splice()
+  toLocaleString
+  : 
+  ƒ toLocaleString()
+  toReversed
+  : 
+  ƒ toReversed()
+  toSorted
+  : 
+  ƒ toSorted()
+  toSpliced
+  : 
+  ƒ toSpliced()
+  toString
+  : 
+  ƒ toString()
+  unshift
+  : 
+  ƒ unshift()
+  values
+  : 
+  ƒ values()
+  with
+  : 
+  ƒ with()
+  Symbol(Symbol.iterator)
+  : 
+  ƒ values()
+  Symbol(Symbol.unscopables)
+  : 
+  {at: true, copyWithin: true, entries: true, fill: true, find: true, …}
+  [[Prototype]]
+  : 
+  Object
+*/
+
+// Array:
+
+/*
+  at
+  : 
+  ƒ at()
+  concat
+  : 
+  ƒ concat()
+  constructor
+  : 
+  ƒ Array()
+  copyWithin
+  : 
+  ƒ copyWithin()
+  entries
+  : 
+  ƒ entries()
+  every
+  : 
+  ƒ every()
+  fill
+  : 
+  ƒ fill()
+  filter
+  : 
+  ƒ filter()
+  find
+  : 
+  ƒ find()
+  findIndex
+  : 
+  ƒ findIndex()
+  findLast
+  : 
+  ƒ findLast()
+  findLastIndex
+  : 
+  ƒ findLastIndex()
+  flat
+  : 
+  ƒ flat()
+  flatMap
+  : 
+  ƒ flatMap()
+  forEach
+  : 
+  ƒ forEach()
+  includes
+  : 
+  ƒ includes()
+  indexOf
+  : 
+  ƒ indexOf()
+  join
+  : 
+  ƒ join()
+  keys
+  : 
+  ƒ keys()
+  lastIndexOf
+  : 
+  ƒ lastIndexOf()
+  length
+  : 
+  0
+  map
+  : 
+  ƒ map()
+  pop
+  : 
+  ƒ pop()
+  push
+  : 
+  ƒ push()
+  reduce
+  : 
+  ƒ reduce()
+  reduceRight
+  : 
+  ƒ reduceRight()
+  reverse
+  : 
+  ƒ reverse()
+  shift
+  : 
+  ƒ shift()
+  slice
+  : 
+  ƒ slice()
+  some
+  : 
+  ƒ some()
+  sort
+  : 
+  ƒ sort()
+  splice
+  : 
+  ƒ splice()
+  toLocaleString
+  : 
+  ƒ toLocaleString()
+  toReversed
+  : 
+  ƒ toReversed()
+  toSorted
+  : 
+  ƒ toSorted()
+  toSpliced
+  : 
+  ƒ toSpliced()
+  toString
+  : 
+  ƒ toString()
+  unshift
+  : 
+  ƒ unshift()
+  values
+  : 
+  ƒ values()
+  with
+  : 
+  ƒ with()
+  Symbol(Symbol.iterator)
+  : 
+  ƒ values()
+  Symbol(Symbol.unscopables)
+  : 
+  {at: true, copyWithin: true, entries: true, fill: true, find: true, …}
+  [[Prototype]]
+  : 
+  Object
+*/

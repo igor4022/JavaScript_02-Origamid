@@ -55,9 +55,9 @@ window.addEventListener('scroll', adicinarNomeLeft)
 
 // Substitua todas as classes js- por data atributes.
 
-const js = document.querySelectorAll(".js-scroll")
+const js = document.querySelectorAll('.js-scroll')
 
 secao.forEach((sec) => {
     sec.dataset.subistitue = "js"
-    sec.classList.remove(js)
+    sec.classList.remove('js-scroll')
 })

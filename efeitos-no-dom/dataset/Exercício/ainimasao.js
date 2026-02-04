@@ -79,7 +79,7 @@ function initScrollSuave() {
 
 initScrollSuave()
 
-// O que faz as abas do site aparecerem com uma anmação suave...
+// O que faz as abas do site aparecerem com uma animação suave...
 
 function initAnimasaoScroll() {
 

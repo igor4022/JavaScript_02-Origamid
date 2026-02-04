@@ -1,16 +1,63 @@
-const h1 = document.querySelector('div')
-const cor = document.querySelector('[data-cor]')
+// Adicione um atributo data-anime="show-down" e
+// data-anime="show-right" a todos as section's
+// com descricão dos animais.
 
-h1.dataset.height = 1000
-console.log(h1.dataset)
+const secao = document.querySelectorAll('section')
 
-// dataseté uma propriedade de HTMLElement, essa propriedade é um objeto do tipo DOMStringMap... 
-// Dentro desse objeto existe uma coleção de chave / valor, com todos os atributos do elemento html que começam com data-...
+secao.forEach((sec) => {
+    sec.dataset.anime = "show-right"
+    sec.dataset.anime = "show-down"
 
-//Data vs. Classe...A vantagem de usar atributos de dados é que torna mais fácil evitar conflitos com estilos do CSS. Além de deixar a estrutura da etiqueta mais organizada...
+    console.log(sec.dataset)
+})
 
-// Nomenclatura...Por padrão o JavaScript não aceita - (traço) como caracter válido para nomear propriedades. Então qualquer traço será removido e a letra seguinte transformada em guardas...
 
-h1.dataset.totalHeight = 2000;
+// Utilizando estes atributos, adicione a classe
+// show-down ou show-right a sua respectiva section
+// assim que a mesma aparecer na tela (animacao tab)
 
-console.log(h1.dataset)
+/*function adicinarNome() {
+    secao.forEach((sec) => {
+        sec.dataset.anime = "show-right"
+    })
+}
+
+window.addEventListener('scroll', adicinarNome)*/
+
+// No CSS faça com que show-down anime de cima para baixo
+// e show-right continue com a mesma animação da esquerda
+// para a direita
+
+function adicinarNomeTop() {
+    secao.forEach((sec) => {
+        sec.dataset.anime = "show-right2"
+        sec.scroll({
+            top: 100,
+            behavior: "smooth",
+        });
+    })
+}
+
+window.addEventListener('scroll', adicinarNomeTop)
+
+function adicinarNomeLeft() {
+    secao.forEach((sec) => {
+        sec.dataset.anime = "show-left2"
+        sec.scroll({
+            left: 100,
+            behavior: "smooth",
+        });
+    })
+}
+
+window.addEventListener('scroll', adicinarNomeLeft)
+
+
+// Substitua todas as classes js- por data atributes.
+
+const js = document.querySelectorAll(".js-scroll")
+
+secao.forEach((sec) => {
+    sec.dataset.subistitue = "js"
+    sec.classList.remove(js)
+})

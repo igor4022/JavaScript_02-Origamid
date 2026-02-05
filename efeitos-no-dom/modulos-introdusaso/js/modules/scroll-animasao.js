@@ -1,6 +1,6 @@
 // O que faz as abas do site aparecerem com uma anmação suave...
 
-export default function initAnimasaoScroll() {
+export default  function initAnimasaoScroll() {
 
   const sections = document.querySelectorAll('.js-scroll')
   if(sections.length) {

@@ -7,7 +7,8 @@ export default function initModal() {
 
 
     function abrirModal(event) {
-       console.log(event)
+       event.preventDefault()
+       containerModal.classList.add('ativo')
     }
 
     btnAbrir.addEventListener('click', abrirModal)

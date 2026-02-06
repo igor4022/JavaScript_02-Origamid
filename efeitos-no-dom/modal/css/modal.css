@@ -24,7 +24,7 @@
     position: relative;
 }
 
-@keyframes modal {
+@keyframes show {
     form {
         opacity: 0;
         transform: translate3d(0, -30px, 0);
@@ -37,7 +37,7 @@
 }
 
 .ativo .modal {
-    animation: modal .3s forwards;
+    animation: show .3s forwards;
 }
 
 .fechar {

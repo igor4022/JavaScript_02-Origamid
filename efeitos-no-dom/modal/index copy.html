@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="titulo">Animais Fantasticos</title>
     <link rel="stylesheet" href="https://use.typekit.net/uvj1hzs.css">
-    <link rel="stylesheet" href="style.css">
-    <script>
-        document.documentElement.className = 'js'
-    </script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div data-cor="=azul" data-width="700" data-anima-scroll="valor">Uma Div</div>
     <nav class="menu js-menu">
         <ul>
             <li><a href="#animais">Animais</a></li>
@@ -149,6 +145,21 @@
     <footer class="copy">
         <p>Todos os direitos reservados</p>
     </footer>
-    <script type="module" src="js/script.js"></script>
+
+    <section class="modal-container" data-modal="container">
+        <div class="modal">
+            <button data-modal="fechar" class="fechar">X</button>
+            <form action="">
+                <label for="e-mail">E-mailz</label>
+                <input type="text" for="e-mail" id="e-mail">
+                <label for="senha">senha</label>
+                <input type="password" for="senha" id="senha">
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </section>
 </body>
+<script type="module" src="js/script.js">
+    document.documentElement.className = 'js'
+</script>
 </html>

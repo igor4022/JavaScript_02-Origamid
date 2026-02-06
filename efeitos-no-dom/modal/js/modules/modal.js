@@ -14,7 +14,7 @@ export default function initModal() {
     btnAbrir.addEventListener('click', abrirModal)
 
     function fecharModal() {
-
+        containerModal.classList.remove('ativo')
     }
 
     btnFechar.addEventListener('click', fecharModal)

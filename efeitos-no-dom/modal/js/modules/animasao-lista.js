@@ -16,5 +16,3 @@ export default function initAcordion() {
     item.addEventListener('click', activeAcordion)
   })
 }
-
-initAcordion()

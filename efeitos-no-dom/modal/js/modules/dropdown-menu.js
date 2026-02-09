@@ -1,11 +1,14 @@
 export default function initDropdownMenu() {
 
-    const dropDown = document.querySelector('[data-dropdown]')
-    const menu = document.querySelector('[data-dropdown]ul')
+    const dropDown = document.querySelectorAll('[data-dropdown]')
 
-    function onMouseClick() {
-        menu.classList.add('dropdown-menu')
+    function onMouseClick(event) {
+        event.preventDefault()
+        this.classList.toggle('ativo')
     }
-
-    dropDown.addEventListener('mouseover', onMouseClick)
+    
+    dropDown.forEach((menu) => {
+        menu.addEventListener('click', onMouseClick)
+        menu.addEventListener('touchstart', onMouseClick)
+    })
 }

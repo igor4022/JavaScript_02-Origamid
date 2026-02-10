@@ -1,0 +1,30 @@
+[data-cor] {
+    background-color: rgb(158, 158, 204);
+}
+
+[data-cor].ativo {
+    background-color: rgb(200, 140, 140);
+}
+
+.container {
+    position: relative;
+    padding: 20px;
+    height: 500px;
+    bottom: -70px;
+    background-color: rgb(20, 20, 20);
+    border: 5px solid rgb(224, 181, 62);
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 10px;
+    font-size: 70px;
+}
+
+button {
+    position: relative;
+    font-size: 30px;
+    left: 15%;
+}
+
+.timer {
+    color: rgb(224, 186, 63);
+    text-align: center;
+}

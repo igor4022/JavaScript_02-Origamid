@@ -5,6 +5,7 @@ import initTabMav from "./modules/animasao-foto.js"
 import initModal from "./modules/modal.js"
 import initTooltip from "./modules/tooltip.js"
 import initDropdownMenu from "./modules/dropdown-menu.js"
+import initMenuMobile from "./modules/menu-mobiele.js"
 
 initScrollSuave()
 initAnimasaoScroll()
@@ -13,3 +14,4 @@ initTabMav()
 initModal()
 initTooltip()
 initDropdownMenu()
+initMenuMobile()

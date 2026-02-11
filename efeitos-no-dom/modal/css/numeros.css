@@ -1,0 +1,25 @@
+.numeros-grid {
+    grid-column: 2/4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.numeros-grid h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+    .numeros-grid {
+        grid-column: 1;
+    }
+}
+
+.numeros-grid span{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 25px;
+    color: #e54;
+}

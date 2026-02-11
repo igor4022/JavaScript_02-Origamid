@@ -1,4 +1,8 @@
 {
     "liveServer.settings.multiRootWorkspaceName": "",
-    "liveServer.settings.port": 0
+    "liveServer.settings.port": 0,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": false,
+    "liveServer.settings.file": "5500"
 }

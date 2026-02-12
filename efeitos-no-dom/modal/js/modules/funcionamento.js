@@ -1,12 +1,18 @@
 export default function initFuncionamento() {
 
-    const data = new Date()
-    
-    console.log(data)
+    const funcionamento = document.querySelector('[data-semana]')
+    const diasSemana = funcionamento.dataset.semana.split(',').map(Number)
+    const horaSemana = funcionamento.dataset.horario.split(',').map(Number)
 
-    function transformarDias(tempo) {
-        return tempo / (24 * 24 * 1000)
+    const dataAgora = new Date()
+    const diaAgora = dataAgora.getDay()
+    const horaAgora = dataAgora.getHours()
+
+    const teste = [1,2,3,4,5].indexOf(6)
+    const semanaAberto = diasSemana.indexOf(diaAgora) !== -1
+    const horarioAberto = (horaAgora >= horaSemana[0] && horaAgora < horaSemana[1])
+
+    if(semanaAberto && horarioAberto) {
+        funcionamento.classList.add('aberto')
     }
-
-    console.log(transformarDias(data.getTime()))
 }

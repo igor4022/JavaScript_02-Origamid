@@ -43,3 +43,17 @@ function handleKey(event) {
 }
 
 contato.addEventListener('change', handleKey)
+
+// Exemplo 4:
+
+// Pegando todos os valores...Ao invés de selecionar elemento por elemento, podemos utilizar um objeto para colocar todos os dados que o usuário coloca no formulário...
+
+const dados = {}
+
+function handleKeyUp(event) {
+    console.log(event.target.name)
+    dados[event.target.name] = event.target.value
+    console.log(dados)
+}
+
+contato.addEventListener('keyup', handleKeyUp)

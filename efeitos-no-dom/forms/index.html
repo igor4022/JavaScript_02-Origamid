@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <style>
+        label {
+            display: block;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        form {
+            max-width: 370px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            border: 2px solid black;
+            font-size: 10px;
+            margin-bottom: 25px;
+        }
+
+        textarea {
+            height: 150px;
+            width: 100%;
+        }
+
+        .invalido {
+            border-color: rgb(220, 26, 26);
+        }
+
+    </style>
+    <form name="contato" id="contato">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" requerid>
+        <span class="erro"></span>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required>
+        <span class="erro"></span>
+        <label for="mensagem">Mensagem</label>
+        <textarea name="textarea" id="textarea"></textarea>
+        <select name="cores" id="cores">
+            <option value="white">branco</option>
+            <option value="blue">azul</option>
+            <option value="red">vermelho</option>
+        </select>
+        <input type="color">
+        <input type="date">
+        <input type="number">
+        <input type="range">
+        <input type="password">
+        <input type="checkbox" value="identidade" id="identidade">
+    </form>
+    <span class="texto"></span>
+</body>
+<script src="script.js"></script>
+</html>

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Button Creator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="button-creator">
-        <form id="ocntroles">
+        <form id="controles">
             <label for="texto">texto</label>
             <input type="text" name="texto" id="texto">
             <label for="color">color</label>
@@ -17,8 +18,24 @@
             <label for="height">height</label>
             <input type="range" name="height" id="height" min="0" max="200">
             <label for="width">width</label>
-            <input type="text" name="width" id="backgroudColor">
+            <input type="range" name="width" id="width" min="0" max="700">
+            <label for="border">border</label>
+            <input type="text" name="border" id="border">
+            <label for="borderRadius">border-radius</label>
+            <input type="range" name="borderRadius" id="borderRadius" min="0" max="20">
+            <select name="fontFamily" id="fontFamily">
+                <option value="Arial">Arial</option>
+                <option value="Georgia">Georgia</option>
+                <option value="monospace">Monospace</option>
+            </select>
+            <label for="fontSize">font-size</label>
+            <input type="number" name="fontSize" id="fontSize">
         </form>
+        <section class="resultado">
+            <button class="btn">Clique</button>
+            <pre><code class="css"></code></pre>
+        </section>
     </section>
 </body>
+<script src="script.js"></script>
 </html>

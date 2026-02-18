@@ -1,0 +1,43 @@
+body {
+    margin: 0px;
+    background-color: #ccc;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+input {
+    display: block;
+}
+
+.button-creator {
+    display: grid;
+    padding: 30px;
+    margin: 10px;
+    grid-template-columns: 200px 1fr;
+}
+
+#controles {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .1);
+}
+
+.css {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.css span {
+    display: block;
+    margin-bottom: 15px;
+}

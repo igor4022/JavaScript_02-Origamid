@@ -21,8 +21,10 @@ input {
 }
 
 #controles {
+    position: relative;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
+    right: 20px;
     background-color: #eee;
     padding: 10px;
     border-radius: 5px;

@@ -37,10 +37,27 @@ function handleChange(event) {
     const value = event.target.value
 
     handleStyle[name](value)
-    showCase()
+    saveValues(name, value)
+    showCss()
 }
 
-function showCase() {
+function saveValues(name, value) {
+    localStorage[name] = value
+}
+
+function setValue() {
+    const properties = Object.keys(localStorage)
+
+    properties.forEach((proties) => {
+        handleStyle[proties](localStorage[proties])
+        controles.elements[proties] = localStorage[proties]
+        showCss()
+    })
+}
+
+setValue()
+
+function showCss() {
     cssText.innerHTML = '<span>' + botao.style.cssText.split('; ').join(';</span><span>')
 }
 

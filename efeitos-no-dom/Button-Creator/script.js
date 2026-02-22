@@ -2,6 +2,8 @@ const controles = document.querySelector('#controles')
 const cssText = document.querySelector('.css')
 const botao = document.querySelector('.btn')
 
+controles.addEventListener('change', handleChange)
+
 const handleStyle = {
     texto(value) {
         botao.innerText = value
@@ -45,7 +47,7 @@ function saveValues(name, value) {
     localStorage[name] = value
 }
 
-function setValue() {
+function setValues() {
     const properties = Object.keys(localStorage)
 
     properties.forEach((proties) => {
@@ -55,10 +57,8 @@ function setValue() {
     })
 }
 
-setValue()
+setValues()
 
 function showCss() {
     cssText.innerHTML = '<span>' + botao.style.cssText.split('; ').join(';</span><span>')
 }
-
-controles.addEventListener('change', handleChange)

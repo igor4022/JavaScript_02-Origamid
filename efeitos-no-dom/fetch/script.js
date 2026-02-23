@@ -96,3 +96,7 @@ sobre.then((resolucao) => {
     document.querySelector('h1').innerText = titulo.innerText
     console.log(titulo)
 })
+
+// Exemplo 6:
+
+// 

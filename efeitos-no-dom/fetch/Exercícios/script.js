@@ -37,11 +37,12 @@ const div = document.querySelector('.valor')
 valorBitcoin.then((bitcoin) => {
     return bitcoin.json()
 }).then((valor) => {
+    div.innerHTML = valor.BRL.buy
     setInterval(() => {
         div.innerHTML = valor.BRL.buy
     }, 30000);
 
-    console.log(valor)s
+    console.log(valor)
 })
 
 // Utilizando a API https://api.chucknorris.io/jokes/random

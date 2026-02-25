@@ -2,18 +2,30 @@
 // crie um formulário onde o usuário pode digitar o cep
 // e o endereço completo é retornado ao clicar em buscar
 
-const cep = document.querySelector('#cep')
-const span = document.createElement('div')
+const inputCep = document.querySelector('#cep')
+const span = document.querySelector('.span')
 const buscar = document.querySelector('.buscar')
-const linkCep  = fetch('https://viacep.com.br/ws/${cep}/json/')
 
-linkCep.then((response) => {
-    return response.text()
-}).then((val) => {
-    span.innerHTML = val
-    buscar.appendChild(span)
-    console.log(span)
-})
+buscar.addEventListener('click', clickBtn)
+
+function clickBtn(event) {
+    event.preventDefault()
+    const cep = inputCep.value
+    valorFinal(cep)
+
+}
+
+function valorFinal(cep) {
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+
+    .then((response) => {
+        return response.text() 
+    }).then((val) => {
+        span.innerText = val
+        console.log(span)
+    })
+}
+
 
 // Utilizando a API https://blockchain.info/ticker
 // retorne no DOM o valor de compra da bitcoin and reais.
@@ -23,29 +35,32 @@ const valorBitcoin = fetch('https://blockchain.info/ticker')
 const div = document.querySelector('.valor')
 
 valorBitcoin.then((bitcoin) => {
-    return bitcoin.text()
+    return bitcoin.json()
 }).then((valor) => {
-    setTimeout(() => {
-        div.innerHTML = valor
-    }, 1000);
+    setInterval(() => {
+        div.innerHTML = valor.BRL.buy
+    }, 30000);
 
-    console.log(valor)
+    console.log(valor)s
 })
 
 // Utilizando a API https://api.chucknorris.io/jokes/random
-// retorne uma piada randomica do chucknorris, toda vez que
+// retorne uma piada randomica do chu cknorris, toda vez que
 // clicar em próxima
 
-const piada = fetch('https://api.chucknorris.io/jokes/random')
 const contarPiada = document.querySelector('.piadas')
 const botao = document.querySelector('.botao')
 
-piada.then((response) => {
-    return response.text()
-}).then((res) => {
-    function botaoClick() {  
-            contarPiada.innerText = res
-    }
+function botaoClick(event) {
+    event.preventDefault()
 
-    botao.addEventListener('click', botaoClick)
-})
+    fetch('https://api.chucknorris.io/jokes/random')
+
+    .then((response) => {
+        return response.text()
+    }).then((res) => {
+            contarPiada.innerText = res
+        })
+}
+
+ botao.addEventListener('click', botaoClick)

@@ -31,19 +31,20 @@ function valorFinal(cep) {
 // retorne no DOM o valor de compra da bitcoin and reais.
 // atualize este valor a cada 30s
 
-const valorBitcoin = fetch('https://blockchain.info/ticker')
 const div = document.querySelector('.valor')
 
-valorBitcoin.then((bitcoin) => {
-    return bitcoin.json()
-}).then((valor) => {
-    div.innerHTML = valor.BRL.buy
-    setInterval(() => {
-        div.innerHTML = valor.BRL.buy
-    }, 30000);
+function valorBitcoin() {
+    fetch('https://blockchain.info/ticker')
+    .then((bitcoin) => {
+        return bitcoin.json()
+    }).then((valor) => {
+        div.innerHTML = ('R$' + valor.BRL.buy).replace('.', ',')
+    })
+}
 
-    console.log(valor)
-})
+setInterval(valorBitcoin, 30000)
+
+valorBitcoin()
 
 // Utilizando a API https://api.chucknorris.io/jokes/random
 // retorne uma piada randomica do chu cknorris, toda vez que
@@ -58,9 +59,9 @@ function botaoClick(event) {
     fetch('https://api.chucknorris.io/jokes/random')
 
     .then((response) => {
-        return response.text()
+        return response.json()
     }).then((res) => {
-            contarPiada.innerText = res
+            contarPiada.innerText = res.value
         })
 }
 

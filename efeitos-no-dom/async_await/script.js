@@ -58,7 +58,7 @@ async function puxarResultado() {
     const jsonClientes = await (await responseClientes).json()
 }
 
-puxarDados()
+puxarResultado()
 
 // Exemplo 5:
 

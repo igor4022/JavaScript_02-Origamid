@@ -315,3 +315,9 @@ a:hover {
 [data-semana].aberto::after {
     background: rgb(30, 184, 30);
 }
+
+.preso {
+    background: rgb(30, 184, 30);
+    padding: .2rem .5rem;
+    border-radius: 2px;
+}

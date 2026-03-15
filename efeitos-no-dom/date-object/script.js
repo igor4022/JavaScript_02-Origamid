@@ -35,7 +35,7 @@ function converterEmDias(time) {
   return time / (24 * 60 * 60 * 1000);
 }
 
-const diasAgora = converterEmDias(agora3);s
+const diasAgora = converterEmDias(agora3);
 const diasPromocao = converterEmDias(promocao);
 
 const faltam = diasPromocao - diasAgora;

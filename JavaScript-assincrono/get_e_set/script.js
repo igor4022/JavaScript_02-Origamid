@@ -47,3 +47,82 @@ class Button {
 }
 
 const blueButton = new Button('Comprar', 'blue')
+
+// Exemplo 4:
+
+// Subclasses...É possível criarmos uma subclasse, esta irá ter acesso aos métodos da classe à qual ela se estende através do seu protótipo...
+
+class Veiculo {
+    constructor(rodas) {
+        this.rodas = rodas
+    }
+    acelerar() {
+        console.log('Acelerou')
+    }
+}
+
+class Moto extends Veiculo {
+    acelerar() {
+        console.log('Acelerou rapido')
+    }
+    empinar() {
+        console.log('Moto empinou com ' + this.rodas + ' rodas')
+    }
+}
+
+const honda = new Moto(2)
+const civic = new Veiculo(2)
+
+// Exemplo 5:
+
+// Super...É possível usar a palavra chave superpara falarmos com a classe que pai e acessarmos seus métodos e propriedades...
+
+class Veiculo2 {
+    constructor(rodas) {
+        this.rodas = rodas
+    }
+    acelerar() {
+        console.log('Acelerou')
+    }
+}
+
+class Bicicleta extends Veiculo2 {
+    acelerar() {
+        super.acelerar()
+        console.log('Acelerou rapido')
+    }
+    empinar() {
+        console.log('Bicicleta empinou com ' + this.rodas + ' rodas')
+    }
+}
+
+const bicicleta = new Bicicleta(1)
+
+// Exemplo 6:
+
+// Super e Construtor...Podemos usar o super para estender o método construtor...
+
+class Veiculo3 {
+    constructor(rodas) {
+        this.rodas = rodas
+    }
+    acelerar() {
+        console.log('Acelerou')
+    }
+}
+
+class Carro extends Veiculo3 {
+    constructor(rodas, combustivel, cinto) {
+        super(rodas, combustivel)
+        this.cinto = cinto
+    }
+    acelerar() {
+        super.acelerar()
+        console.log('Acelerou rapido')
+    }
+    empinar() {
+        console.log('Carro empinou com ' + this.rodas + ' rodas')
+    }
+}
+
+const carro = new Carro(2, 'Gasolina', true)
